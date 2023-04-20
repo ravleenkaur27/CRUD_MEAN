@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 
 const Article = require('/home/ravleen/Desktop/mean_project/models/article')
 const articleRouter = require('/home/ravleen/Desktop/mean_project/routes/articles')
+const methodOverride = require('method-override')
 const app = express()
 var db = require('./config/db');
 console.log("connecting--",db);
@@ -12,9 +13,10 @@ app.set('view engine', 'ejs')
 
 app.use(express.urlencoded({ extended: false }))
 app.use('/articles',articleRouter)
-
+app.use(methodOverride('_method'))
 app.get('/', async (req,res) => {
-const articles = await Article.find()
+const articles = await Article.find().sort({
+createdAt: 'desc' })
 /*const articles = [{
 title: "Test",
 createdAt: new Date(),
