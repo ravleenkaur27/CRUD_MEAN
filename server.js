@@ -13,8 +13,9 @@ app.set('view engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use('/articles',articleRouter)
 
-app.get('/', (req,res) => {
-const articles = [{
+app.get('/', async (req,res) => {
+const articles = await Article.find()
+/*const articles = [{
 title: "Test",
 createdAt: new Date(),
 description: "LOL"
@@ -24,7 +25,7 @@ title: "Test 2",
 createdAt: new Date(),
 description: "LOL 2"
 }
-]
+]*/
 res.render('articles/index', {articles: articles})
 })
 app.use('/articles',articleRouter)

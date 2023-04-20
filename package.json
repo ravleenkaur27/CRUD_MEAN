@@ -5,14 +5,16 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart":  "nodemon server.js"
+    "devStart": "nodemon server.js"
   },
   "author": "\"Ravleen\"",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "mongoose": "^7.0.4"
+    "marked": "^4.3.0",
+    "mongoose": "^7.0.4",
+    "slugify": "^1.6.6"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
