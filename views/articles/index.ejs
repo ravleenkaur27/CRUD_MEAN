@@ -25,7 +25,10 @@ crossorigin="anonymous">
             <%= article.createdAt.toLocaleDateString() %>
           </div>
           <div class ="card-text mb-2"><%= article.description %></div>
-                    <a href ="articles/<%= article.slug %>" class = "btn btn-primary"; >Reaad More</a>
+                    <a href ="articles/<%= article.slug %>" class = "btn btn-primary"; >Read More
+                    </a>
+                     <div class ="card-text mb-2"></div>
+                    <a href ="articles/edit/<%= article.id %>" class = "btn btn-info"; >Edit</a>
                     <form action ="/articles/<%= article.id %>?_method=DELETE" method ="POST" class = "d-inline" ><button type ="submit" class= "btn btn-danger">Delete</button></form>
           </div></div>
           <% }) %>
